@@ -17,7 +17,7 @@ void prod() {
 
 		std::lock_guard<std::mutex> guard(queueMutex);
 		int x = rand() % 10;
-		cout << "Producer " << x << endl;
+		cout << "Produced " << x << endl;
 		myqu.push(x);
 	}
 }
