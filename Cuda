@@ -6,7 +6,7 @@ using namespace std;
 #define N 5
 #define INF 99999
 
-__global__ void RoyFloyd(float* graph, int k)
+__global__ void Floyd(float* graph, int k)
 {
     int i = blockIdx.x + threadIdx.x;
 	int j = blockIdx.y + threadIdx.y;
@@ -37,7 +37,7 @@ int main()
 
 	for(int k = 0; k < N; k++)
 	{
-		RoyFloyd<<<numBlocks, threadsPerBlock>>>(d_graph, k);
+		Floyd<<<numBlocks, threadsPerBlock>>>(d_graph, k);
 
 	}
 		
